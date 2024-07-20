@@ -1,0 +1,7 @@
+{
+    "thingName": "SensorThing",
+    "certificateArn": "arn:aws:iot:region:account-id:cert/unique-cert-id",
+    "policyName": "SensorPolicy",
+    "mqttTopic": "sensor/data"
+  }
+  
