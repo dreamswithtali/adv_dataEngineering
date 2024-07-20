@@ -1,0 +1,5 @@
+{
+    "StreamName": "your-kinesis-stream-name",
+    "Region": "your-region"
+  }
+  
