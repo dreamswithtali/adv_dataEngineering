@@ -40,5 +40,137 @@ This project involves designing, setting up, and implementing a real-time sensor
 5. **Update GitHub Repository**
     - Code and configuration files for data ingestion and processing.
 
-## Repository Structure
+
+
+## Detailed Instructions and Files
+
+### Assignment 1
+
+#### data_ingestion/iot-core-setup.md
+
+```markdown
+# AWS IoT Core Setup
+
+## Steps
+
+1. **Create an IoT Core Thing**:
+    - Go to AWS IoT Core in the AWS Management Console.
+    - Click on "Manage" and then "Things".
+    - Click on "Create" and follow the prompts to create a new thing.
+    - Name your thing (e.g., `SensorThing`).
+
+2. **Set Up Certificates and Policies**:
+    - Create a new certificate and download it along with the private key, public key, and root CA.
+    - Attach a policy to the certificate to allow data ingestion.
+
+3. **Configure MQTT Topics**:
+    - Set up MQTT topics for sensor data ingestion.
+
+4. **Test the Configuration**:
+    - Use AWS IoT Core's test feature to verify data ingestion.
+
+## Configuration File
+
+```json
+{
+  "thingName": "SensorThing",
+  "certificateArn": "arn:aws:iot:region:account-id:cert/unique-cert-id",
+  "policyName": "SensorPolicy",
+  "mqttTopic": "sensor/data"
+}
+
+
+#### data_storage/s3-setup.md
+
+```markdown
+# Amazon S3 Setup
+
+## Steps
+
+1. **Create an S3 Bucket**:
+    - Go to S3 in the AWS Management Console.
+    - Create a new bucket named `sensor-data-bucket`.
+
+2. **Configure Bucket Policies**:
+    - Set up policies to allow access from AWS IoT Core and other services.
+
+3. **Organize Data Storage**:
+    - Create folders for raw and processed data.
+
+## Example Policy
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::sensor-data-bucket/*"
+    }
+  ]
+}
+
+
+#### data_storage/redshift-setup.md
+
+```markdown
+# Amazon Redshift Setup
+
+## Steps
+
+1. **Create a Redshift Cluster**:
+    - Go to Redshift in the AWS Management Console.
+    - Create a new cluster and configure it.
+
+2. **Set Up IAM Roles**:
+    - Create an IAM role that allows Redshift to access S3.
+
+3. **Configure Data Warehouse**:
+    - Set up the schema and tables for storing processed data.
+
+## Example Schema
+
+```sql
+CREATE TABLE sensor_data (
+    id INT IDENTITY(1,1),
+    sensor_id VARCHAR(50),
+    timestamp TIMESTAMP,
+    data JSON,
+    PRIMARY KEY(id)
+);
+
+
+#### data_processing/lambda-functions/process_data.py
+
+```python
+import json
+import boto3
+
+def lambda_handler(event, context):
+    # Process the incoming data
+    data = json.loads(event['body'])
+    
+    # Transform the data as required
+    processed_data = transform_data(data)
+    
+    # Store the processed data in S3
+    s3 = boto3.client('s3')
+    s3.put_object(Bucket='sensor-data-bucket', Key='processed/data.json', Body=json.dumps(processed_data))
+    
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Data processed successfully')
+    }
+
+def transform_data(data):
+    # Example transformation logic
+    transformed_data = {
+        'sensor_id': data['sensor_id'],
+        'timestamp': data['timestamp'],
+        'value': data['value'] * 2  # Example transformation
+    }
+    return transformed_data
+
 
