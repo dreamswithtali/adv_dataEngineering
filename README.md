@@ -1,72 +1,77 @@
-Assignment 1: Architecture Design and Setup
-Project Overview
-This project aims to design and set up a real-time sensor data processing platform using AWS services. The platform will handle data engineering and processing for various data sizes, including 10MB, 1GB, 10GB, and 100GB. The key components include data ingestion, storage, processing, aggregation, and visualization.
+# Requirements for Assignment 1: Architecture Design and Setup
 
-Architecture Diagram
+## Project Overview
+Design and set up a real-time sensor data processing platform using AWS services to handle data engineering and processing for various data sizes, including 10MB, 1GB, 10GB, and 100GB.
 
-High-Level Architecture
-1. Data Ingestion
-Service Used: AWS IoT Core
-AWS IoT Core is used to ingest data from various sensors in real-time. The data is sent to MQTT topics configured within IoT Core.
+## High-Level Architecture Components
+1. **Data Ingestion**
+   - **Service**: AWS IoT Core
+   - **Details**: Ingest data from sensors in real-time using MQTT topics.
 
-2. Data Storage
-Services Used: Amazon S3 and Amazon Redshift
-Raw data is stored in Amazon S3. Processed data is stored in Amazon Redshift for efficient querying and analysis.
+2. **Data Storage**
+   - **Services**: Amazon S3, Amazon Redshift
+   - **Details**: Store raw data in S3 and processed data in Redshift.
 
-3. Data Processing
-Services Used: AWS Lambda and AWS Glue
-Real-time data processing is handled by AWS Lambda functions. Batch processing and data transformation are performed using AWS Glue.
+3. **Data Processing**
+   - **Services**: AWS Lambda, AWS Glue
+   - **Details**: Real-time processing with Lambda, batch processing with Glue.
 
-4. Data Aggregation
-Service Used: AWS Glue
-AWS Glue jobs are used to aggregate processed data and prepare it for visualization and analysis.
+4. **Data Aggregation**
+   - **Service**: AWS Glue
+   - **Details**: Aggregate processed data using Glue jobs.
 
-5. Data Visualization
-Service Used: Amazon QuickSight
-Amazon QuickSight is used to create interactive dashboards and visualizations for the aggregated sensor data.
+5. **Data Visualization**
+   - **Service**: Amazon QuickSight
+   - **Details**: Create dashboards and visualizations for aggregated data.
 
-GitHub Repository
-Repository Name: Real-Time-Sensor-Data-Platform
-Structure:
-arduino
-Copy code
+## GitHub Repository
+- **Repository Name**: `Real-Time-Sensor-Data-Platform`
+- **Structure**:
+
 Real-Time-Sensor-Data-Platform/
 ├── README.md
 ├── architecture-diagram.png
 ├── data_ingestion/
-│   ├── iot-core-setup.md
-│   └── iot-core-configuration.json
+│ ├── iot-core-setup.md
+│ └── iot-core-configuration.json
 ├── data_storage/
-│   ├── s3-setup.md
-│   └── redshift-setup.md
+│ ├── s3-setup.md
+│ └── redshift-setup.md
 ├── data_processing/
-│   ├── lambda-functions/
-│   │   ├── process_data.py
-│   │   └── requirements.txt
-│   └── glue-jobs/
-│       ├── batch_process.py
-│       └── glue-configuration.json
+│ ├── lambda-functions/
+│ │ ├── process_data.py
+│ │ └── requirements.txt
+│ └── glue-jobs/
+│ ├── batch_process.py
+│ └── glue-configuration.json
 ├── data_aggregation/
-│   └── glue-aggregation-job.py
+│ └── glue-aggregation-job.py
 └── data_visualization/
-    └── quicksight-setup.md
-AWS Services Setup
-1. Data Ingestion
-Setup Instructions: Detailed in data_ingestion/iot-core-setup.md
-Configuration File: data_ingestion/iot-core-configuration.json
+└── quicksight-setup.md
 
-2. Data Storage
-Setup Instructions for S3: Detailed in data_storage/s3-setup.md
-Setup Instructions for Redshift: Detailed in data_storage/redshift-setup.md
 
-3. Data Processing
-Lambda Function: data_processing/lambda-functions/process_data.py
-Dependencies: data_processing/lambda-functions/requirements.txt
-Glue Batch Processing: data_processing/glue-jobs/batch_process.py
-Glue Configuration: data_processing/glue-jobs/glue-configuration.json
+## AWS Services Setup
 
-4. Data Aggregation
-Glue Aggregation Job: data_aggregation/glue-aggregation-job.py
+### Data Ingestion
+- **Setup Instructions**: `data_ingestion/iot-core-setup.md`
+- **Configuration File**: `data_ingestion/iot-core-configuration.json`
 
-5. Data Visualization
-QuickSight Setup: Detailed in data_visualization/quicksight-setup.md
+### Data Storage
+- **S3 Setup Instructions**: `data_storage/s3-setup.md`
+- **Redshift Setup Instructions**: `data_storage/redshift-setup.md`
+
+### Data Processing
+- **Lambda Function**: `data_processing/lambda-functions/process_data.py`
+- **Dependencies**: `data_processing/lambda-functions/requirements.txt`
+- **Glue Batch Processing**: `data_processing/glue-jobs/batch_process.py`
+- **Glue Configuration**: `data_processing/glue-jobs/glue-configuration.json`
+
+### Data Aggregation
+- **Glue Aggregation Job**: `data_aggregation/glue-aggregation-job.py`
+
+### Data Visualization
+- **QuickSight Setup**: `data_visualization/quicksight-setup.md`
+
+## Architecture Diagram
+- **Image**: `architecture-diagram.png`
+
