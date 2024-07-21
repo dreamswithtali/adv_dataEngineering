@@ -101,7 +101,7 @@ This project involves designing, setting up, and implementing a real-time sensor
 
 ```json
 {
-  "Version": "2012-10-17",
+  "Version": "2024-07-15",
   "Statement": [
     {
       "Effect": "Allow",
