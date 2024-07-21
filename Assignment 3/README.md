@@ -1,5 +1,7 @@
 # Assignment 3: Data Aggregation and Visualization
 
+https://github.com/dreamswithtali/adv_dataEngineering/tree/main/Assignment%203
+
 ## 1. Configure AWS Redshift or Amazon Athena
 Aggregate the processed data and enable fast querying and analysis.
 

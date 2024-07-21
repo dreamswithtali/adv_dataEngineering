@@ -1,5 +1,7 @@
  Real-Time Sensor Data Platform
 
+ https://github.com/dreamswithtali/adv_dataEngineering/tree/main/Assignment%202
+
 ## Overview
 
 This project involves designing, setting up, and implementing a real-time sensor data processing platform using AWS services. The platform handles data ingestion, storage, processing, aggregation, and visualization, catering to data sizes from 10MB to 100GB.

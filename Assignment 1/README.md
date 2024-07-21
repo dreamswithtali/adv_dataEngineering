@@ -1,5 +1,7 @@
 # Real-Time Sensor Data Platform
 
+https://github.com/dreamswithtali/adv_dataEngineering/tree/main/Assignment%201
+
 ## Assignment 1: Architecture Design and Setup
 
 ### Project Overview
