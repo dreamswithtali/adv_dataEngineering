@@ -4,22 +4,6 @@
 
 This project involves designing, setting up, and implementing a real-time sensor data processing platform using AWS services. The platform handles data ingestion, storage, processing, aggregation, and visualization, catering to data sizes from 10MB to 100GB.
 
-## Assignments
-
-### Assignment 1: Architecture Design and Setup
-
-1. **Design High-Level Architecture**
-    - Components: Data Ingestion (AWS IoT Core), Data Storage (Amazon S3, Amazon Redshift), Data Processing (AWS Lambda, AWS Glue), Data Aggregation (AWS Glue), Data Visualization (Amazon QuickSight)
-    - ![Architecture Diagram](architecture-diagram.png)
-
-2. **GitHub Repository Setup**
-    - Repository: `Real-Time-Sensor-Data-Platform`
-
-3. **README.md**
-    - Overview of the project and architecture diagram.
-
-4. **AWS Services Setup**
-    - AWS IoT Core, S3, Lambda, Glue, Redshift, QuickSight.
 
 ### Assignment 2: Data Ingestion and Processing
 
