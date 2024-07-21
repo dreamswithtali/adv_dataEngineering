@@ -1,20 +1,19 @@
 {
-    "Name": "sensor-data-glue-job",
-    "Role": "AWSGlueServiceRole",
-    "Command": {
+  "Name": "sensor-data-glue-job",
+  "Role": "AWSGlueServiceRole",
+  "Command": {
       "Name": "glueetl",
-      "ScriptLocation": "s3://scripts/sensor-data-glue-job.py",
+      "ScriptLocation": "s3://company-scripts/sensor-data-glue-job.py",
       "PythonVersion": "3"
-    },
-    "DefaultArguments": {
-      "--TempDir": "s3://temp/",
+  },
+  "DefaultArguments": {
+      "--TempDir": "s3://company-temp/",
       "--job-bookmark-option": "job-bookmark-disable"
-    },
-    "MaxRetries": 0,
-    "Timeout": 2880,
-    "MaxCapacity": 2.0,
-    "GlueVersion": "2.0",
-    "NumberOfWorkers": 10,
-    "WorkerType": "Standard"
-  }
-  
+  },
+  "MaxRetries": 1,
+  "Timeout": 1440,
+  "MaxCapacity": 2.0,
+  "GlueVersion": "3.0",
+  "NumberOfWorkers": 5,
+  "WorkerType": "G.1X"
+}
