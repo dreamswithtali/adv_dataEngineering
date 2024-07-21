@@ -10,7 +10,7 @@ This project involves designing, setting up, and implementing a real-time sensor
 
 1. **Design High-Level Architecture**
     - Components: Data Ingestion (AWS IoT Core), Data Storage (Amazon S3, Amazon Redshift), Data Processing (AWS Lambda, AWS Glue), Data Aggregation (AWS Glue), Data Visualization (Amazon QuickSight)
-    - ![Architecture Diagram](path/to/architecture-diagram.png)
+    - ![Architecture Diagram](architecture-diagram.png)
 
 2. **GitHub Repository Setup**
     - Repository: `Real-Time-Sensor-Data-Platform`
