@@ -1,0 +1,14 @@
+{
+    "Version": "2024-07-15",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": "s3:*",
+        "Resource": [
+          "arn:aws:s3:::sensor-data-bucket",
+          "arn:aws:s3:::sensor-data-bucket/*"
+        ]
+      }
+    ]
+  }
+  
